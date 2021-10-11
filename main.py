@@ -39,7 +39,7 @@ def display():
             print("DC")
         else:
             print("Disconnected")
-    else:
+    elif 'Status' in message:
         rows = list(map(lambda x: list(x.split()), message.split("\n")))
 
 
@@ -77,6 +77,9 @@ def display():
         LABEL = LABEL.replace("%uptime%", TIME_LABEL)
 
         print(LABEL)
+    else:
+        print("Whoops!")
+
 
 def click():
     # Check if connected
